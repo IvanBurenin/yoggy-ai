@@ -59,12 +59,13 @@ function detectLang(): Lang {
       Telegram?: { WebApp?: { initDataUnsafe?: { user?: { language_code?: string } } } }
     }
   ).Telegram?.WebApp?.initDataUnsafe?.user?.language_code
-  const candidates = [
-    params.get('lang'),
-    window.localStorage.getItem('yoggy-lang'),
-    telegram,
-    navigator.language,
-  ]
+  let stored: string | null = null
+  try {
+    stored = window.localStorage.getItem('yoggy-lang')
+  } catch {
+    stored = null
+  }
+  const candidates = [params.get('lang'), stored, telegram, navigator.language]
   for (const value of candidates) {
     if (!value) continue
     const base = value.toLowerCase().replace('_', '-').split('-')[0]
@@ -574,7 +575,11 @@ export default function App() {
     setMeta('meta[property="og:locale"]', 'content', c.meta.ogLocale)
     setMeta('meta[name="twitter:title"]', 'content', c.meta.title)
     setMeta('meta[name="twitter:description"]', 'content', c.meta.description)
-    window.localStorage.setItem('yoggy-lang', lang)
+    try {
+      window.localStorage.setItem('yoggy-lang', lang)
+    } catch {
+      // Storage can be unavailable in embedded webviews.
+    }
     const url = new URL(window.location.href)
     if (lang === 'en') url.searchParams.delete('lang')
     else url.searchParams.set('lang', lang)
