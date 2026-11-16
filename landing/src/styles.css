@@ -1021,7 +1021,7 @@ a {
   width: 54px;
   height: 44px;
   margin-top: 4px;
-  color: var(--purple);
+  color: var(--ink);
 }
 
 .studio-title {
@@ -1029,7 +1029,7 @@ a {
   color: var(--ink);
   font-family: var(--sans);
   font-size: clamp(28px, 3.2vw, 42px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 0.98;
   letter-spacing: 0.005em;
   text-transform: uppercase;
@@ -1105,7 +1105,7 @@ a {
 .studio-project-mark svg {
   width: 34px;
   height: 28px;
-  color: var(--purple);
+  color: var(--ink);
 }
 
 .studio-project-mark img {
