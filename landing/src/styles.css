@@ -412,7 +412,7 @@ a {
 
 .float-checkin {
   top: 52%;
-  left: -18%;
+  left: -26%;
 }
 
 .float-label {
@@ -1041,6 +1041,12 @@ a {
 
   .float-checkin {
     left: 4%;
+  }
+
+  .float-checkin,
+  .float-streak,
+  .float-badge {
+    display: none;
   }
 
   .float-streak {
