@@ -1002,32 +1002,10 @@ a {
 }
 
 /* --------------------------------------------------------------- studio */
-.studio {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(58px, 8vw, 108px) 0;
-  border-top: 1px solid rgba(236, 239, 233, 0.12);
-  background: #0b100d;
-  color: var(--paper);
-}
-
-.studio::before {
-  content: '';
-  position: absolute;
-  top: -55%;
-  right: -12%;
-  width: min(760px, 80%);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(122, 31, 230, 0.22), transparent 65%);
-  pointer-events: none;
-}
-
 .studio-grid {
-  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(38px, 6vw, 90px);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(38px, 6vw, 88px);
   align-items: center;
 }
 
@@ -1040,15 +1018,15 @@ a {
 
 .studio-mark {
   flex: 0 0 auto;
-  width: 56px;
-  height: 46px;
+  width: 54px;
+  height: 44px;
   margin-top: 4px;
-  color: var(--paper);
+  color: var(--purple);
 }
 
 .studio-title {
   margin: 0;
-  color: #fff;
+  color: var(--ink);
   font-family: var(--sans);
   font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 700;
@@ -1060,7 +1038,7 @@ a {
 .studio-tagline {
   max-width: 34ch;
   margin: 16px 0 0;
-  color: rgba(236, 239, 233, 0.62);
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.4;
 }
@@ -1070,55 +1048,30 @@ a {
 }
 
 .studio-statement {
-  max-width: 46ch;
+  max-width: 28ch;
   margin: 0;
-  color: rgba(236, 239, 233, 0.92);
-  font-size: clamp(18px, 1.7vw, 23px);
-  line-height: 1.4;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(25px, 3vw, 40px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
   text-wrap: pretty;
 }
 
 .studio-stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin: 30px 0 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(236, 239, 233, 0.16);
-}
-
-.studio-stat {
-  display: grid;
-  gap: 6px;
-}
-
-.studio-stat dt {
-  color: rgba(236, 239, 233, 0.5);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.studio-stat dd {
-  margin: 0;
-  color: #fff;
-  font-family: var(--sans);
-  font-size: clamp(38px, 4.2vw, 58px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  margin-top: 32px;
 }
 
 .studio-projects {
   margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(236, 239, 233, 0.16);
+  padding-top: 22px;
+  border-top: 1px solid var(--line-strong);
 }
 
-.studio-label {
+.studio-projects-label {
   margin: 0;
-  color: rgba(236, 239, 233, 0.5);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.12em;
@@ -1136,7 +1089,7 @@ a {
   align-items: center;
   gap: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(236, 239, 233, 0.12);
+  border-bottom: 1px solid var(--line);
   color: inherit;
   text-decoration: none;
 }
@@ -1152,7 +1105,7 @@ a {
 .studio-project-mark svg {
   width: 34px;
   height: 28px;
-  color: var(--paper);
+  color: var(--purple);
 }
 
 .studio-project-mark img {
@@ -1163,19 +1116,19 @@ a {
 }
 
 .studio-project-name {
-  color: #fff;
+  color: var(--ink);
   font-size: 15px;
   font-weight: 600;
   transition: color 0.2s;
 }
 
 .studio-project:hover .studio-project-name {
-  color: #d8c7ff;
+  color: var(--purple-ink);
 }
 
 .studio-project-role {
   margin-left: auto;
-  color: rgba(236, 239, 233, 0.45);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 9.5px;
   letter-spacing: 0.1em;
@@ -1183,34 +1136,14 @@ a {
 }
 
 .studio-youtube {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  margin-top: 20px;
-  padding: 10px 14px;
-  border: 1px solid rgba(236, 239, 233, 0.2);
-  border-radius: 999px;
-  color: rgba(236, 239, 233, 0.86);
-  font-size: 13px;
-  text-decoration: none;
-  transition:
-    border-color 0.2s,
-    background 0.2s,
-    color 0.2s;
-}
-
-.studio-youtube:hover {
-  border-color: rgba(236, 239, 233, 0.55);
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  margin-top: 26px;
 }
 
 .studio-handle {
-  color: rgba(236, 239, 233, 0.45);
+  margin-left: 2px;
+  color: var(--muted);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10.5px;
 }
 
 /* ---------------------------------------------------------------- footer */

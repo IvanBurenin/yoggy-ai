@@ -665,80 +665,85 @@ function Cta() {
 function Studio() {
   const { c } = useLanding()
   return (
-    <section className="studio" aria-labelledby="studio-title">
-      <div className="wrap studio-grid">
-        <div className="studio-brand">
-          <svg className="studio-mark" viewBox="0 0 40 32" aria-hidden="true">
-            <path d="M0 32 L40 0 L40 32 Z" fill="currentColor" />
-          </svg>
-          <div>
-            <h2 className="studio-title" id="studio-title">
-              ESPADA
-              <br />
-              ENTERTAINMENT
-            </h2>
-            <p className="studio-tagline">{c.studio.tagline}</p>
-          </div>
-        </div>
-
-        <div className="studio-copy">
-          <p className="studio-statement">{c.studio.statement}</p>
-
-          <dl className="studio-stats">
-            {c.studio.stats.map((stat) => (
-              <div className="studio-stat" key={stat.label}>
-                <dt>{stat.label}</dt>
-                <dd>{stat.value}</dd>
+    <section className="section section-tinted studio-section" id="studio">
+      <div className="wrap">
+        <Reveal>
+          <SectionLabel index="08">{c.studio.label}</SectionLabel>
+          <div className="studio-grid">
+            <div className="studio-brand">
+              <svg className="studio-mark" viewBox="0 0 40 32" aria-hidden="true">
+                <path d="M0 32 L40 0 L40 32 Z" fill="currentColor" />
+              </svg>
+              <div>
+                <h2 className="studio-title">
+                  ESPADA
+                  <br />
+                  ENTERTAINMENT
+                </h2>
+                <p className="studio-tagline">{c.studio.tagline}</p>
               </div>
-            ))}
-          </dl>
+            </div>
 
-          <div className="studio-projects">
-            <p className="studio-label">{c.studio.projectsLabel}</p>
-            <ul className="studio-projects-list">
-              {c.studio.projects.map((project, index) => (
-                <li key={project.name}>
-                  <a
-                    className="studio-project"
-                    href={STUDIO_LINKS[index]}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span className="studio-project-mark" aria-hidden="true">
-                      {index === 0 ? (
-                        <svg viewBox="0 0 40 32">
-                          <path d="M0 32 L40 0 L40 32 Z" fill="currentColor" />
-                        </svg>
-                      ) : (
-                        <img
-                          src={asset(
-                            index === 1 ? 'tracky-logo.jpg' : 'app-icon.png',
+            <div className="studio-copy">
+              <p className="studio-statement">{c.studio.statement}</p>
+
+              <div className="mini-stats studio-stats">
+                {c.studio.stats.map((stat) => (
+                  <div key={stat.label}>
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="studio-projects">
+                <p className="studio-projects-label">{c.studio.projectsLabel}</p>
+                <ul className="studio-projects-list">
+                  {c.studio.projects.map((project, index) => (
+                    <li key={project.name}>
+                      <a
+                        className="studio-project"
+                        href={STUDIO_LINKS[index]}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span className="studio-project-mark" aria-hidden="true">
+                          {index === 0 ? (
+                            <svg viewBox="0 0 40 32">
+                              <path d="M0 32 L40 0 L40 32 Z" fill="currentColor" />
+                            </svg>
+                          ) : (
+                            <img
+                              src={asset(
+                                index === 1 ? 'tracky-logo.jpg' : 'app-icon.png',
+                              )}
+                              alt=""
+                              width={34}
+                              height={34}
+                            />
                           )}
-                          alt=""
-                          width={34}
-                          height={34}
-                        />
-                      )}
-                    </span>
-                    <span className="studio-project-name">{project.name}</span>
-                    <span className="studio-project-role">{project.role}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+                        </span>
+                        <span className="studio-project-name">{project.name}</span>
+                        <span className="studio-project-role">{project.role}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          <a
-            className="studio-youtube"
-            href={STUDIO_CHANNEL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <SquarePlay size={19} aria-hidden="true" />
-            <span>{c.studio.youtube}</span>
-            <span className="studio-handle">@espadasportsru</span>
-          </a>
-        </div>
+              <a
+                className="text-link studio-youtube"
+                href={STUDIO_CHANNEL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <SquarePlay size={15} aria-hidden="true" />
+                {c.studio.youtube}
+                <span className="studio-handle">@espadasportsru</span>
+              </a>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -809,8 +814,8 @@ export default function App() {
         <ProgressSection />
         <Languages />
         <Faq />
-        <Cta />
         <Studio />
+        <Cta />
       </main>
       <Footer />
     </LandingContext.Provider>

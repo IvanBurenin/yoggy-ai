@@ -109,6 +109,7 @@ export interface Content {
     author: string
   }
   studio: {
+    label: string
     tagline: string
     statement: string
     stats: Array<{ value: string; label: string }>
@@ -289,6 +290,7 @@ const en: Content = {
     author: 'Ivan Burenin',
   },
   studio: {
+    label: 'Studio',
     tagline: 'The team behind Yoggy and the Espada Sports projects',
     statement:
       'ESPADA SPORTS covers football on YouTube, Yoggy keeps the practice.',
@@ -477,6 +479,7 @@ const ru: Content = {
     author: 'Ivan Burenin',
   },
   studio: {
+    label: 'Студия',
     tagline: 'Команда, которая делает Yoggy и проекты Espada Sports',
     statement:
       'ESPADA SPORTS рассказывает о футболе на YouTube, Yoggy ведёт практику.',
@@ -665,6 +668,7 @@ const de: Content = {
     author: 'Ivan Burenin',
   },
   studio: {
+    label: 'Studio',
     tagline: 'Das Team hinter Yoggy und den Espada-Sports-Projekten',
     statement:
       'ESPADA SPORTS zeigt Fußball auf YouTube, Yoggy führt die Praxis.',
@@ -853,6 +857,7 @@ const fr: Content = {
     author: 'Ivan Burenin',
   },
   studio: {
+    label: 'Studio',
     tagline: 'L’équipe derrière Yoggy et les projets Espada Sports',
     statement:
       'ESPADA SPORTS raconte le football sur YouTube, Yoggy suit la pratique.',
@@ -1041,6 +1046,7 @@ const es: Content = {
     author: 'Ivan Burenin',
   },
   studio: {
+    label: 'Estudio',
     tagline: 'El equipo detrás de Yoggy y los proyectos Espada Sports',
     statement:
       'ESPADA SPORTS cuenta el fútbol en YouTube, Yoggy registra la práctica.',
@@ -1218,6 +1224,7 @@ const zh: Content = {
     author: 'Ivan Burenin',
   },
   studio: {
+    label: '工作室',
     tagline: '打造 Yoggy 与 Espada Sports 项目的团队',
     statement: 'ESPADA SPORTS 在 YouTube 讲足球，Yoggy 记录练习。',
     stats: [
