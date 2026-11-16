@@ -299,7 +299,7 @@ function Screens() {
               Six screens, <em>no noise.</em>
             </h2>
             <p className="section-lead">
-              Everything opens in the Telegram you already use. Swipe through the
+              Everything opens in the Telegram you already use. Take a look at the
               parts you will touch every day.
             </p>
           </div>
