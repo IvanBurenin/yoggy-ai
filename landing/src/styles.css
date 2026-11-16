@@ -155,8 +155,67 @@ a {
   color: var(--ink);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 4px;
+}
+
+.lang-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 26px 8px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink-2);
+  background: transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.lang-switch:hover {
+  border-color: var(--ink);
+  background: rgba(23, 33, 27, 0.04);
+}
+
+.lang-switch:focus-within {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}
+
+.lang-switch > svg:first-child {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+
+.lang-switch select {
+  appearance: none;
+  max-width: 110px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.lang-switch select:focus {
+  outline: none;
+}
+
+.lang-chevron {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: var(--muted);
+}
+
 .header-cta {
-  margin-left: 6px;
   padding: 10px 16px;
   font-size: 13.5px;
 }
@@ -353,7 +412,7 @@ a {
 
 .float-checkin {
   top: 52%;
-  left: -13%;
+  left: -18%;
 }
 
 .float-label {
@@ -956,7 +1015,7 @@ a {
     display: none;
   }
 
-  .header-cta {
+  .header-actions {
     margin-left: auto;
   }
 
@@ -1060,6 +1119,19 @@ a {
   .header-cta {
     padding: 9px 13px;
     font-size: 12.5px;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .lang-switch {
+    padding: 7px 24px 7px 9px;
+  }
+
+  .lang-switch select {
+    max-width: 92px;
+    font-size: 12px;
   }
 
   .hero {

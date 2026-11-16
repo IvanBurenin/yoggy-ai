@@ -76,15 +76,20 @@ reminders; the Mini App opens with a button in the chat.
 
 | Today | AI assistant | Progress |
 |:---:|:---:|:---:|
-| <img src="docs/screens/today.png" width="260" alt="Today screen"> | <img src="docs/screens/ai.png" width="260" alt="AI assistant"> | <img src="docs/screens/progress.png" width="260" alt="Progress"> |
+| <img src="landing/public/screens/en/today.png" width="260" alt="Today screen"> | <img src="landing/public/screens/en/ai.png" width="260" alt="AI assistant"> | <img src="landing/public/screens/en/progress.png" width="260" alt="Progress"> |
 | **Practices** | **Plans** | **Diary** |
-| <img src="docs/screens/practices.png" width="260" alt="Practices catalog"> | <img src="docs/screens/plans.png" width="260" alt="Plans"> | <img src="docs/screens/diary.png" width="260" alt="Diary"> |
+| <img src="landing/public/screens/en/practices.png" width="260" alt="Practices catalog"> | <img src="landing/public/screens/en/plans.png" width="260" alt="Plans"> | <img src="landing/public/screens/en/diary.png" width="260" alt="Diary"> |
 
 ## Languages
 
-The bot and the app speak six languages and follow your Telegram settings:
+The bot, the Mini App and the landing page speak six languages and follow your
+Telegram settings:
 
 **English · Русский · Deutsch · Français · Español · 中文**
+
+The landing switches languages from the header and remembers the choice. You
+can also share a direct link, for example
+`https://ivanburenin.github.io/yoggy-ai/?lang=ru`.
 
 ## Get started
 
