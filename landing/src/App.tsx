@@ -4,6 +4,7 @@ import {
   useEffect,
   useRef,
   useState,
+  type KeyboardEvent as ReactKeyboardEvent,
   type ReactNode,
 } from 'react'
 import {
@@ -182,24 +183,145 @@ function SectionLabel({ index, children }: { index: string; children: ReactNode 
 
 function LanguageSwitcher() {
   const { c, lang, setLang } = useLanding()
+  const [open, setOpen] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(() =>
+    Math.max(0, LANGUAGES.findIndex((item) => item.code === lang)),
+  )
+  const rootRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const optionRefs = useRef<Array<HTMLButtonElement | null>>([])
+  const current =
+    LANGUAGES.find((item) => item.code === lang) ?? LANGUAGES[0]
+
+  useEffect(() => {
+    if (!open) return
+    const index = Math.max(
+      0,
+      LANGUAGES.findIndex((item) => item.code === lang),
+    )
+    setActiveIndex(index)
+    const timer = window.setTimeout(() => {
+      optionRefs.current[index]?.focus()
+    }, 0)
+    const onPointerDown = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      window.clearTimeout(timer)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
+  }, [lang, open])
+
+  const close = (focusButton = true) => {
+    setOpen(false)
+    if (focusButton) buttonRef.current?.focus()
+  }
+
+  const choose = (code: Lang) => {
+    setLang(code)
+    close()
+  }
+
+  const move = (delta: number) => {
+    const next =
+      (activeIndex + delta + LANGUAGES.length) % LANGUAGES.length
+    setActiveIndex(next)
+    optionRefs.current[next]?.focus()
+  }
+
+  const onMenuKeyDown = (event: ReactKeyboardEvent) => {
+    if (event.key === 'Escape') {
+      event.preventDefault()
+      close()
+      return
+    }
+    if (event.key === 'ArrowDown') {
+      event.preventDefault()
+      move(1)
+      return
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault()
+      move(-1)
+      return
+    }
+    if (event.key === 'Home') {
+      event.preventDefault()
+      setActiveIndex(0)
+      optionRefs.current[0]?.focus()
+      return
+    }
+    if (event.key === 'End') {
+      event.preventDefault()
+      const last = LANGUAGES.length - 1
+      setActiveIndex(last)
+      optionRefs.current[last]?.focus()
+      return
+    }
+    if (event.key === 'Tab') setOpen(false)
+  }
+
   return (
-    <div className="lang-switch">
-      <Globe size={14} aria-hidden="true" />
-      <select
-        value={lang}
-        aria-label={c.langLabel}
+    <div className="lang-switch" ref={rootRef}>
+      <button
+        ref={buttonRef}
+        type="button"
+        className="lang-trigger"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={`${c.langLabel}: ${current.native}`}
         title={c.langLabel}
-        onChange={(event) => {
-          if (isLang(event.target.value)) setLang(event.target.value)
+        onClick={() => setOpen((value) => !value)}
+        onKeyDown={(event) => {
+          if (
+            event.key === 'ArrowDown' ||
+            event.key === 'ArrowUp' ||
+            event.key === 'Enter' ||
+            event.key === ' '
+          ) {
+            event.preventDefault()
+            setOpen(true)
+          }
         }}
       >
-        {LANGUAGES.map((item) => (
-          <option value={item.code} key={item.code}>
-            {item.native}
-          </option>
-        ))}
-      </select>
-      <ChevronDown className="lang-chevron" size={12} aria-hidden="true" />
+        <Globe size={14} aria-hidden="true" />
+        <span className="lang-current">{current.native}</span>
+        <ChevronDown className="lang-chevron" size={13} aria-hidden="true" />
+      </button>
+
+      {open ? (
+        <div
+          className="lang-menu"
+          role="listbox"
+          aria-label={c.langLabel}
+          onKeyDown={onMenuKeyDown}
+        >
+          {LANGUAGES.map((item, index) => (
+            <button
+              key={item.code}
+              ref={(element) => {
+                optionRefs.current[index] = element
+              }}
+              type="button"
+              role="option"
+              aria-selected={item.code === lang}
+              tabIndex={-1}
+              className={`lang-option${index === activeIndex ? ' is-active' : ''}`}
+              onClick={() => choose(item.code)}
+              onMouseEnter={() => setActiveIndex(index)}
+            >
+              <span className="lang-native">{item.native}</span>
+              <span className="lang-code">{item.short}</span>
+              {item.code === lang ? (
+                <Check className="lang-check" size={14} aria-hidden="true" />
+              ) : (
+                <span className="lang-check" aria-hidden="true" />
+              )}
+            </button>
+          ))}
+        </div>
+      ) : null}
     </div>
   )
 }
