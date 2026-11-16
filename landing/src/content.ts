@@ -108,6 +108,14 @@ export interface Content {
     github: string
     author: string
   }
+  studio: {
+    tagline: string
+    statement: string
+    stats: Array<{ value: string; label: string }>
+    projectsLabel: string
+    projects: Array<{ name: string; role: string }>
+    youtube: string
+  }
 }
 
 const en: Content = {
@@ -279,6 +287,22 @@ const en: Content = {
     telegram: 'Telegram',
     github: 'GitHub',
     author: 'Ivan Burenin',
+  },
+  studio: {
+    tagline: 'The team behind Yoggy and the Espada Sports projects',
+    statement:
+      'ESPADA SPORTS covers football on YouTube, Yoggy keeps the practice.',
+    stats: [
+      { value: '4.4K', label: 'YouTube subscribers' },
+      { value: '6M', label: 'Video views' },
+    ],
+    projectsLabel: 'Projects',
+    projects: [
+      { name: 'ESPADA SPORTS', role: 'Football channel' },
+      { name: 'Tracky', role: 'Training log' },
+      { name: 'Yoggy', role: 'Yoga & mindfulness' },
+    ],
+    youtube: 'YouTube',
   },
 }
 
@@ -452,6 +476,22 @@ const ru: Content = {
     github: 'GitHub',
     author: 'Ivan Burenin',
   },
+  studio: {
+    tagline: 'Команда, которая делает Yoggy и проекты Espada Sports',
+    statement:
+      'ESPADA SPORTS рассказывает о футболе на YouTube, Yoggy ведёт практику.',
+    stats: [
+      { value: '4,4 тыс.', label: 'подписчиков на YouTube' },
+      { value: '6 млн', label: 'просмотров видео' },
+    ],
+    projectsLabel: 'Проекты',
+    projects: [
+      { name: 'ESPADA SPORTS', role: 'Футбольный канал' },
+      { name: 'Tracky', role: 'Дневник тренировок' },
+      { name: 'Yoggy', role: 'Йога и осознанность' },
+    ],
+    youtube: 'YouTube',
+  },
 }
 
 const de: Content = {
@@ -623,6 +663,22 @@ const de: Content = {
     telegram: 'Telegram',
     github: 'GitHub',
     author: 'Ivan Burenin',
+  },
+  studio: {
+    tagline: 'Das Team hinter Yoggy und den Espada-Sports-Projekten',
+    statement:
+      'ESPADA SPORTS zeigt Fußball auf YouTube, Yoggy führt die Praxis.',
+    stats: [
+      { value: '4,4 Tsd.', label: 'YouTube-Abonnenten' },
+      { value: '6 Mio.', label: 'Videoaufrufe' },
+    ],
+    projectsLabel: 'Projekte',
+    projects: [
+      { name: 'ESPADA SPORTS', role: 'Fußballkanal' },
+      { name: 'Tracky', role: 'Trainingslog' },
+      { name: 'Yoggy', role: 'Yoga & Achtsamkeit' },
+    ],
+    youtube: 'YouTube',
   },
 }
 
@@ -796,6 +852,22 @@ const fr: Content = {
     github: 'GitHub',
     author: 'Ivan Burenin',
   },
+  studio: {
+    tagline: 'L’équipe derrière Yoggy et les projets Espada Sports',
+    statement:
+      'ESPADA SPORTS raconte le football sur YouTube, Yoggy suit la pratique.',
+    stats: [
+      { value: '4,4 k', label: 'abonnés YouTube' },
+      { value: '6 M', label: 'vues vidéo' },
+    ],
+    projectsLabel: 'Projets',
+    projects: [
+      { name: 'ESPADA SPORTS', role: 'Chaîne football' },
+      { name: 'Tracky', role: 'Journal d’entraînement' },
+      { name: 'Yoggy', role: 'Yoga & pleine conscience' },
+    ],
+    youtube: 'YouTube',
+  },
 }
 
 const es: Content = {
@@ -968,6 +1040,22 @@ const es: Content = {
     github: 'GitHub',
     author: 'Ivan Burenin',
   },
+  studio: {
+    tagline: 'El equipo detrás de Yoggy y los proyectos Espada Sports',
+    statement:
+      'ESPADA SPORTS cuenta el fútbol en YouTube, Yoggy registra la práctica.',
+    stats: [
+      { value: '4,4 mil', label: 'suscriptores de YouTube' },
+      { value: '6 M', label: 'visualizaciones' },
+    ],
+    projectsLabel: 'Proyectos',
+    projects: [
+      { name: 'ESPADA SPORTS', role: 'Canal de fútbol' },
+      { name: 'Tracky', role: 'Diario de entrenamiento' },
+      { name: 'Yoggy', role: 'Yoga y atención plena' },
+    ],
+    youtube: 'YouTube',
+  },
 }
 
 const zh: Content = {
@@ -1128,6 +1216,21 @@ const zh: Content = {
     telegram: 'Telegram',
     github: 'GitHub',
     author: 'Ivan Burenin',
+  },
+  studio: {
+    tagline: '打造 Yoggy 与 Espada Sports 项目的团队',
+    statement: 'ESPADA SPORTS 在 YouTube 讲足球，Yoggy 记录练习。',
+    stats: [
+      { value: '4400', label: 'YouTube 订阅者' },
+      { value: '600万', label: '视频观看量' },
+    ],
+    projectsLabel: '项目',
+    projects: [
+      { name: 'ESPADA SPORTS', role: '足球频道' },
+      { name: 'Tracky', role: '训练日志' },
+      { name: 'Yoggy', role: '瑜伽与正念' },
+    ],
+    youtube: 'YouTube',
   },
 }
 

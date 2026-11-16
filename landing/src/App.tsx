@@ -21,6 +21,7 @@ import {
   Moon,
   Send,
   Sparkles,
+  SquarePlay,
   Sun,
   Wind,
 } from 'lucide-react'
@@ -34,6 +35,12 @@ import {
 
 const TELEGRAM = 'https://t.me/AiYoggyBot'
 const REPO = 'https://github.com/IvanBurenin/yoggy-ai'
+const STUDIO_CHANNEL = 'https://www.youtube.com/@espadasportsru'
+const STUDIO_LINKS = [
+  STUDIO_CHANNEL,
+  'https://t.me/AiTrackyBot',
+  'https://t.me/AiYoggyBot',
+]
 const SCREEN_KEYS = ['today', 'practices', 'plans', 'progress', 'ai', 'diary'] as const
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
@@ -655,6 +662,88 @@ function Cta() {
   )
 }
 
+function Studio() {
+  const { c } = useLanding()
+  return (
+    <section className="studio" aria-labelledby="studio-title">
+      <div className="wrap studio-grid">
+        <div className="studio-brand">
+          <svg className="studio-mark" viewBox="0 0 40 32" aria-hidden="true">
+            <path d="M0 32 L40 0 L40 32 Z" fill="currentColor" />
+          </svg>
+          <div>
+            <h2 className="studio-title" id="studio-title">
+              ESPADA
+              <br />
+              ENTERTAINMENT
+            </h2>
+            <p className="studio-tagline">{c.studio.tagline}</p>
+          </div>
+        </div>
+
+        <div className="studio-copy">
+          <p className="studio-statement">{c.studio.statement}</p>
+
+          <dl className="studio-stats">
+            {c.studio.stats.map((stat) => (
+              <div className="studio-stat" key={stat.label}>
+                <dt>{stat.label}</dt>
+                <dd>{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="studio-projects">
+            <p className="studio-label">{c.studio.projectsLabel}</p>
+            <ul className="studio-projects-list">
+              {c.studio.projects.map((project, index) => (
+                <li key={project.name}>
+                  <a
+                    className="studio-project"
+                    href={STUDIO_LINKS[index]}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span className="studio-project-mark" aria-hidden="true">
+                      {index === 0 ? (
+                        <svg viewBox="0 0 40 32">
+                          <path d="M0 32 L40 0 L40 32 Z" fill="currentColor" />
+                        </svg>
+                      ) : (
+                        <img
+                          src={asset(
+                            index === 1 ? 'tracky-logo.jpg' : 'app-icon.png',
+                          )}
+                          alt=""
+                          width={34}
+                          height={34}
+                        />
+                      )}
+                    </span>
+                    <span className="studio-project-name">{project.name}</span>
+                    <span className="studio-project-role">{project.role}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <a
+            className="studio-youtube"
+            href={STUDIO_CHANNEL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <SquarePlay size={19} aria-hidden="true" />
+            <span>{c.studio.youtube}</span>
+            <span className="studio-handle">@espadasportsru</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Footer() {
   const { c } = useLanding()
   return (
@@ -721,6 +810,7 @@ export default function App() {
         <Languages />
         <Faq />
         <Cta />
+        <Studio />
       </main>
       <Footer />
     </LandingContext.Provider>
