@@ -291,7 +291,7 @@ const en: Content = {
   },
   studio: {
     label: 'Studio',
-    tagline: 'The team behind Yoggy and the Espada Sports projects',
+    tagline: 'The team behind Yoggy, Fitty and the Espada Sports projects',
     statement:
       'ESPADA SPORTS covers football on YouTube, Yoggy keeps the practice.',
     stats: [
@@ -303,6 +303,7 @@ const en: Content = {
       { name: 'ESPADA SPORTS', role: 'Football channel' },
       { name: 'Tracky', role: 'Training log' },
       { name: 'Yoggy', role: 'Yoga & mindfulness' },
+      { name: 'Fitty', role: 'AI food tracker' },
     ],
     youtube: 'YouTube',
   },
@@ -480,7 +481,7 @@ const ru: Content = {
   },
   studio: {
     label: 'Студия',
-    tagline: 'Команда, которая делает Yoggy и проекты Espada Sports',
+    tagline: 'Команда, которая делает Yoggy, Fitty и проекты Espada Sports',
     statement:
       'ESPADA SPORTS рассказывает о футболе на YouTube, Yoggy ведёт практику.',
     stats: [
@@ -492,6 +493,7 @@ const ru: Content = {
       { name: 'ESPADA SPORTS', role: 'Футбольный канал' },
       { name: 'Tracky', role: 'Дневник тренировок' },
       { name: 'Yoggy', role: 'Йога и осознанность' },
+      { name: 'Fitty', role: 'ИИ-трекер еды' },
     ],
     youtube: 'YouTube',
   },
@@ -669,7 +671,7 @@ const de: Content = {
   },
   studio: {
     label: 'Studio',
-    tagline: 'Das Team hinter Yoggy und den Espada-Sports-Projekten',
+    tagline: 'Das Team hinter Yoggy, Fitty und den Espada-Sports-Projekten',
     statement:
       'ESPADA SPORTS zeigt Fußball auf YouTube, Yoggy führt die Praxis.',
     stats: [
@@ -681,6 +683,7 @@ const de: Content = {
       { name: 'ESPADA SPORTS', role: 'Fußballkanal' },
       { name: 'Tracky', role: 'Trainingslog' },
       { name: 'Yoggy', role: 'Yoga & Achtsamkeit' },
+      { name: 'Fitty', role: 'KI-Ernährungstracker' },
     ],
     youtube: 'YouTube',
   },
@@ -858,7 +861,7 @@ const fr: Content = {
   },
   studio: {
     label: 'Studio',
-    tagline: 'L’équipe derrière Yoggy et les projets Espada Sports',
+    tagline: 'L’équipe derrière Yoggy, Fitty et les projets Espada Sports',
     statement:
       'ESPADA SPORTS raconte le football sur YouTube, Yoggy suit la pratique.',
     stats: [
@@ -870,6 +873,7 @@ const fr: Content = {
       { name: 'ESPADA SPORTS', role: 'Chaîne football' },
       { name: 'Tracky', role: 'Journal d’entraînement' },
       { name: 'Yoggy', role: 'Yoga & pleine conscience' },
+      { name: 'Fitty', role: 'Suivi alimentaire IA' },
     ],
     youtube: 'YouTube',
   },
@@ -1047,7 +1051,7 @@ const es: Content = {
   },
   studio: {
     label: 'Estudio',
-    tagline: 'El equipo detrás de Yoggy y los proyectos Espada Sports',
+    tagline: 'El equipo detrás de Yoggy, Fitty y los proyectos Espada Sports',
     statement:
       'ESPADA SPORTS cuenta el fútbol en YouTube, Yoggy registra la práctica.',
     stats: [
@@ -1059,6 +1063,7 @@ const es: Content = {
       { name: 'ESPADA SPORTS', role: 'Canal de fútbol' },
       { name: 'Tracky', role: 'Diario de entrenamiento' },
       { name: 'Yoggy', role: 'Yoga y atención plena' },
+      { name: 'Fitty', role: 'Rastreador de comida con IA' },
     ],
     youtube: 'YouTube',
   },
@@ -1225,7 +1230,7 @@ const zh: Content = {
   },
   studio: {
     label: '工作室',
-    tagline: '打造 Yoggy 与 Espada Sports 项目的团队',
+    tagline: '打造 Yoggy、Fitty 与 Espada Sports 项目的团队',
     statement: 'ESPADA SPORTS 在 YouTube 讲足球，Yoggy 记录练习。',
     stats: [
       { value: '4400', label: 'YouTube 订阅者' },
@@ -1236,6 +1241,7 @@ const zh: Content = {
       { name: 'ESPADA SPORTS', role: '足球频道' },
       { name: 'Tracky', role: '训练日志' },
       { name: 'Yoggy', role: '瑜伽与正念' },
+      { name: 'Fitty', role: 'AI 饮食追踪' },
     ],
     youtube: 'YouTube',
   },

@@ -35,11 +35,14 @@ import {
 
 const TELEGRAM = 'https://t.me/AiYoggyBot'
 const REPO = 'https://github.com/IvanBurenin/yoggy-ai'
+const FITTY_REPO = 'https://github.com/IvanBurenin/fitty-ai'
+const FITTY_BOT = 'https://t.me/AiFittyBot'
 const STUDIO_CHANNEL = 'https://www.youtube.com/@espadasportsru'
 const STUDIO_LINKS = [
   STUDIO_CHANNEL,
   'https://t.me/AiTrackyBot',
   'https://t.me/AiYoggyBot',
+  'https://t.me/AiFittyBot',
 ]
 const SCREEN_KEYS = ['today', 'practices', 'plans', 'progress', 'ai', 'diary'] as const
 
@@ -715,7 +718,11 @@ function Studio() {
                           ) : (
                             <img
                               src={asset(
-                                index === 1 ? 'tracky-logo.jpg' : 'app-icon.png',
+                                index === 1
+                                  ? 'tracky-logo.jpg'
+                                  : index === 2
+                                    ? 'app-icon.png'
+                                    : 'fitty-icon.png',
                               )}
                               alt=""
                               width={34}
@@ -767,6 +774,12 @@ function Footer() {
           </a>
           <a href={REPO} target="_blank" rel="noreferrer">
             <Github size={14} aria-hidden="true" /> {c.footer.github}
+          </a>
+          <a href={FITTY_REPO} target="_blank" rel="noreferrer">
+            <Github size={14} aria-hidden="true" /> Fitty
+          </a>
+          <a href={FITTY_BOT} target="_blank" rel="noreferrer">
+            @AiFittyBot
           </a>
           <a href="https://github.com/IvanBurenin" target="_blank" rel="noreferrer">
             {c.footer.author}
